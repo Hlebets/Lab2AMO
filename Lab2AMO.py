@@ -1,4 +1,5 @@
 import math
+import matplotlib.pyplot as plt
 
 def f(x, a):
     return math.exp(a * x) * (1 + x * x) * math.sin(x) / (x + 2)
@@ -20,3 +21,6 @@ for i in range(6):
     ai = a[i]
     result = simpson(0, 1, 1000, ai)
     print(ai, "\t", result)
+
+plt.plot(a, [simpson(0, 1, 1000, ai) for ai in a])
+plt.show()
